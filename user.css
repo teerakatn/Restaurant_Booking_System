@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "Kanit";
+    src: url("./Kanit/Kanit-Regular.ttf");
+}
+
+body {
+    font-family: "Kanit";
+    background: url("w4.jpg");
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.header1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color:rgb(12, 203, 236);
+}
+.Back_to_register 
+{   
+    background-color:rgb(218, 155, 212);
+    display: center; 
+    justify-content: center;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color:white;
+}
+.Back_to_register:hover {
+    background-color:rgb(51, 230, 140);
+    color:white;
+    transform: scale(1.1);
+}
+
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 8px rgb(218, 127, 198);
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #E0E0E0;
+}
+/*  หัวตาราง  */
+th {
+    background-color:rgb(188, 231, 236); /* เขียวฟ้าอ่อน */
+    color: #37474F;
+    text-transform: uppercase;
+}
+/* แถวสลับสี  */
+tr:nth-child(even) {
+    background-color:rgb(253, 230, 239); /* ชมพูอ่อน */
+}
+
+tr:hover {
+    background-color:#FFA0E2; /* เปลี่ยนสีเมื่อ Hover */
+    transition: 0.5s;
+}
+/* แถว Hover */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.Edit {
+    background-color:rgb(157, 140, 233);
+    color: white;
+}
+.Edit:hover {/* เปลี่ยนสีเมื่อ Hover */
+    background-color:rgb(145, 226, 137);
+    color: black;
+    transform: scale(1.1);
+}
+
+.delete {
+    background-color:rgb(235, 88, 203);
+    color: white;
+}
+.delete:hover {/* เปลี่ยนสีเมื่อ Hover */
+    background-color:rgb(202, 40, 40);
+    color: white;   
+    transform: scale(1.1);
+}
+
