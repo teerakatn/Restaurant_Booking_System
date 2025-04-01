@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking completed</title>
+
+    <link rel="stylesheet" href="home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="OwlCarousel2/Owl/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="OwlCarousel2/Owl/dist/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+
+  <nav>
+    <div class="nav_container">
+         <div class="nav-con">
+              <div class="navbar">
+                   <h1 class="logo"> <i class="fa-solid fa-carrot"></i>Restaurant</h1>
+              </div>
+
+              <div class="hamburger-icon" id="hamIcon" onclick="toggleHamburgerIcon(this)">
+                   <div class="bar1"></div>
+                   <div class="bar2"></div>
+                   <div class="bar3"></div>
+               </div>
+
+              <ul class="menu" id="myMenu">
+                   <li class="home"><a href="home.html">HOME</a></li>
+                   <li class="register"><a href="index.html">REGISTER</a></li>
+              </ul>
+         </div>
+    </div>
+</nav>
+
+    <div class="container" data-aos="fade-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000">
+          <h1 class="header1">
+            WELCOME 
+          </h1>
+          <h1 class="header2">
+             TO 
+          </h1>
+          <h1 class="header3">
+            BOOKING RESTAURANT
+          </h1>
+
+
+          <div class="form-input">
+            If it's delicious, you have to finish it. Our restaurant doesn't have to wait long, so hurry and order.
+          </div>
+
+          <div class="container1">
+          <div class="owl-carousel">
+            <div class="owlitem1"></div>
+            <div class="owlitem2"></div>
+            <div class="owlitem3"></div>
+            <div class="owlitem4"></div>
+            <div class="owlitem5"></div>
+            <div class="owlitem6"></div>
+          </div>
+        </div>
+        <div><a href="index.html"><button class="start">GET START</button></a></div>
+     </div>
+
+     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>  
+     
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="OwlCarousel2/Owl/dist/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel();
+        });
+    </script>
+
+    <script src="home.js"></script> 
+
+</body>
+</html>

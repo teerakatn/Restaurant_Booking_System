@@ -1,15 +1,82 @@
-@font-face {
-    font-family: "Kanit";
-    src: url("./Kanit/Kanit-Regular.ttf");
-}
-
 body {
-    font-family: "Kanit";
-    background: url("w4.jpg");
+    font-family: 'Kanit', sans-serif;
+    background: url("picture/res1.webp");
     background-size: cover;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: 0;
     padding: 20px;
+    padding-top: 100px; /* ให้มีพื้นที่ด้านบนสำหรับ navbar */
+}
+
+nav{
+    position: fixed; /* ทำให้ navbar คงที่เมื่อเลื่อนหน้าเว็บ */
+    top: 0;
+    left: 0;
+    width: 100%; /* ให้ navbar กว้างเต็มจอ */
+    background-color:rgba(221, 149, 133, 0.82);
+    box-sizeding: border-box; /* ทำให้ padding ไม่ทำให้ขนาดของ navbar เปลี่ยน */
+    padding: 10px 0;
+}
+
+.nav_container{
+    max-width: 1140px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.nav-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:60px;
+}
+
+.navbar{
+    padding: 0 20px;
+    font-size: 1rem;
+    display: column;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.home:hover{
+    background-color: #d2a679;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.register:hover{
+    background-color: #d2a679;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.form-control{
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 200px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+    background-color: #fff;
 }
 
 .header1 {
@@ -19,53 +86,44 @@ body {
     font-weight: bold;
     color:rgb(12, 203, 236);
 }
-.Back_to_register 
-{   
-    background-color:rgb(218, 155, 212);
-    display: center; 
-    justify-content: center;
-    width: 250px;
-    border-radius: 10px;
+
+.approve {
     font-size: 20px;
-    margin-bottom: 20px;
     font-weight: bold;
-    color:white;
-}
-.Back_to_register:hover {
-    background-color:rgb(51, 230, 140);
-    color:white;
-    transform: scale(1.1);
+    color:#8b5e3b;
+    margin-bottom: 20px;
 }
 
 
 table {
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
     border-collapse: collapse;
-    box-shadow: 0px 4px 8px rgb(218, 127, 198);
-    background: white;
+    box-shadow: 0px 4px 8px #c4a484;
+    background: #fff3e0;
     border-radius: 10px;
     overflow: hidden;
 }
 
 th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #E0E0E0;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 2px solid #e0c3a3;
 }
 /*  หัวตาราง  */
 th {
-    background-color:rgb(188, 231, 236); /* เขียวฟ้าอ่อน */
-    color: #37474F;
+    background-color:#d2a679; 
+    color: #4e342e;
     text-transform: uppercase;
 }
 /* แถวสลับสี  */
 tr:nth-child(even) {
-    background-color:rgb(253, 230, 239); /* ชมพูอ่อน */
+    background-color:#fce8d5;
 }
 
 tr:hover {
-    background-color:#FFA0E2; /* เปลี่ยนสีเมื่อ Hover */
+    background-color:#e0ac69; /* เปลี่ยนสีเมื่อ Hover */
     transition: 0.5s;
 }
 /* แถว Hover */
@@ -78,22 +136,121 @@ button {
 }
 
 .Edit {
-    background-color:rgb(157, 140, 233);
+    background-color:#b87333;
     color: white;
 }
 .Edit:hover {/* เปลี่ยนสีเมื่อ Hover */
     background-color:rgb(145, 226, 137);
-    color: black;
-    transform: scale(1.1);
+    color: white;
+    transform: scale(1.3);
 }
 
 .delete {
-    background-color:rgb(235, 88, 203);
+    background-color:#d2691e;
     color: white;
 }
 .delete:hover {/* เปลี่ยนสีเมื่อ Hover */
     background-color:rgb(202, 40, 40);
     color: white;   
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
+
+.approve{
+    margin-top: 20px;
+    padding: 7px 11px;
+    background-color:#d2a679;
+    color: white;
+}
+
+.approve:hover {
+    background-color:rgb(145, 226, 137);
+    color: white;
+    transform: scale(1.3);
+}
+
+@media(max-width: 768px) {
+    table {
+        width: 40%;
+        margin: 15px auto;
+        border-collapse: collapse;
+        box-shadow: 0px 4px 8px #c4a484;
+        background: #fff3e0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    th, td {
+        padding: 3px;
+        font-size: 10px;
+        text-align: center;
+        border-bottom: 2px solid #e0c3a3;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    .menu{
+        display:flex !important;
+        
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-con{
+        flex-direction: column;
+        align-items: flex-start; /* จัดแนวให้ชิดซ้าย */
+        height: auto; /* ปรับความสูงให้เหมาะสม */
+        padding: 0px 20px; /* เพิ่ม padding ด้านบนและล่าง */ 
+    }
+
+    .navbar{
+        padding: 0 20px; /* เพิ่ม padding ซ้ายและขวา */
+        font-size: 1rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
+    }
+
+    .menu{
+        display:none;
+        flex-direction: column; /* เปลี่ยนแนวการจัดเรียงเป็นแนวตั้ง */
+        margin-top: -10px; /* เพิ่มระยะห่างด้านบน */
+        padding: 0; /* ลบ padding ออก */
+    }
+
+    li{
+        margin-left: 0; /* ลบ margin ซ้ายออก */
+        padding: 10px ; /* เพิ่ม padding ด้านบนและล่าง */
+    }
+
+
+}
+
+/* Hamburger Icon Styling */
+.hamburger-icon {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  
+@media only screen and (min-width: 764px) {
+      display: none;
+    }
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
 

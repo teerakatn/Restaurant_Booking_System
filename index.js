@@ -1,6 +1,21 @@
 const BASE_URL = 'http://localhost:8000'
 let mode='CREATE'//default mode
 let selectedId=''
+/*hamburger*/ 
+function toggleHamburgerIcon(el) {
+  el.classList.toggle("change");
+}
+
+const myMenu = document.getElementById("myMenu");
+const hamIcon = document.getElementById("hamIcon");
+
+hamIcon.addEventListener("click", function() {
+  if (myMenu.style.display === "block") {
+      myMenu.style.display = "none";
+  } else {
+      myMenu.style.display = "block";
+  }
+});
 
 window.onload = async() => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -40,10 +55,17 @@ window.onload = async() => {
     descriptionDOM.value=restaurant.description
 
     let date_timeDOM = document.querySelector('input[name=date_time]');
+
+    if (restaurant.date_time) {
+      let dateObj = new Date(restaurant.date_time);// ใช้วันที่จากฐานข้อมูล
+      dateObj.setHours(dateObj.getHours()+7);
+      let formattedDateTime = dateObj.toISOString().slice(0, 16); // แปลงเป็น YYYY-MM-DDTHH:MM
+      date_timeDOM.value = formattedDateTime;
+  }
     
     let telDOM = document.querySelector('input[name=tel]');
 
-    date_timeDOM.value=restaurant.date_time
+  
     telDOM.value=restaurant.tel
     
     }catch(error){
@@ -52,28 +74,22 @@ window.onload = async() => {
   }
 }
 
-const validateData = (userData) => {
-  let errors = []
-  if (!userData.firstname) {
-    errors.push ('Firstname')
+const checkDuplicate = async (userData) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/users`);
+    const users = response.data;
+    
+    return users.some(user => 
+      user.firstname === userData.firstname &&
+      user.lastname === userData.lastname &&
+      new Date(user.date_time).getTime() === new Date(userData.date_time).getTime()
+    );
+  } catch (error) {
+    console.log('Error checking duplicate:', error);
+    return false;
   }
-  if (!userData.lastname) {
-    errors.push ('Lastname')
-  }
-  if (!userData.person) {
-    errors.push ('จำนวนคน')
-  }
-  if (!userData.date_time) {
-    errors.push ('วันเวลาที่ต้องการจอง')
-  }
-  if (!userData.tel) {
-    errors.push ('ข้อมูลการติดต่อ')
-  }
-  if (!userData.description) {
-    errors.push ('รายละเอียดเพิ่มเติม')
-  }
-  return errors;
 }
+
 
 const submitData = async () => {
   let firstNameDOM = document.querySelector('input[name=firstname]');
@@ -88,22 +104,22 @@ const submitData = async () => {
   try {
 
     let userData = {
-      firstname: firstNameDOM ? firstNameDOM.value : "",
-      lastname: lastNameDOM ? lastNameDOM.value : "",
-      person: personDOM ? personDOM.value : "",
-      date_time: date_timeDOM ? date_timeDOM.value : "",
-      tel: telDOM ? telDOM.value : "",
-      description: descriptionDOM ? descriptionDOM.value : ""
+      firstname: firstNameDOM.value,
+      lastname: lastNameDOM.value,
+      person: personDOM.value,
+      date_time: date_timeDOM.value,
+      tel: telDOM.value,
+      description: descriptionDOM.value
   };
     console.log('submitData', userData);
 
-    // เอาไว้ตรวจสอบว่ามีไหนว่างเปล่า
-    let errors = validateData(userData);
-    if (errors.length > 0) {
-      messageDOM.innerHTML = `<div>กรุณากรอกข้อมูล: ${errors.join(', ')}</div>`;
+    const isDuplicate = await checkDuplicate(userData);
+    if (isDuplicate) {
+      messageDOM.innerText = 'มีการจองในช่วงเวลานี้แล้ว';
       messageDOM.className = 'message danger';
       return;
     }
+
 
    let message = 'การจองสำเร็จ'
     if(mode=='CREATE'){
@@ -117,7 +133,7 @@ const submitData = async () => {
 
     setTimeout(() => {
       window.location.href = "user.html";
-    }, 500);
+    }, 1000);
 
     messageDOM.innerText = message
     messageDOM.className = 'message success'

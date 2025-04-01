@@ -6,15 +6,46 @@
     <title>Document</title>
     <link rel="stylesheet" href="user.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <h1 class="header1">User management page</h1>
-    <div id="restaurant"></div>
+
+    <nav>
+        <div class="nav_container">
+             <div class="nav-con">
+                  <div class="navbar">
+                       <h1 class="logo"> <i class="fa-solid fa-carrot"></i>Restaurant</h1>
+                  </div>
+
+                  <div class="hamburger-icon" id="hamIcon" onclick="toggleHamburgerIcon(this)">
+                       <div class="bar1"></div>
+                       <div class="bar2"></div>
+                       <div class="bar3"></div>
+                   </div>
+
+                  <ul class="menu" id="myMenu">
+                       <li class="home"><a href="home.html">HOME</a></li>
+                       <li class="register"><a href="index.html">REGISTER</a></li>
+                  </ul>
+             </div>
+        </div>
+   </nav>
+
+    <div>
+    <div class="form-control"><input type="text" id="search"  placeholder="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <div class="container2" id="restaurant"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="user.js"></script>  
-    <div style="display: flex; justify-content: center;">
-        <a href="index.html"><div class="Back_to_register">Back to register</div></a>
-      </div>
+</div>
+
 </a>
 </body>
 </html>

@@ -1,0 +1,332 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background: url("picture/res1.webp");
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    padding-top: 130px; /* ให้มีพื้นที่ด้านบนสำหรับ navbar */
+
+}
+
+nav{
+    position: fixed; /* ทำให้ navbar คงที่เมื่อเลื่อนหน้าเว็บ */
+    top: 0;
+    left: 0;
+    width: 100%; /* ให้ navbar กว้างเต็มจอ */
+    background-color:rgba(221, 149, 133, 0.82);
+    box-sizeding: border-box; /* ทำให้ padding ไม่ทำให้ขนาดของ navbar เปลี่ยน */
+    padding: 10px 0;
+}
+
+.nav_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.nav-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:60px;
+}
+
+.navbar{
+    padding: 0 20px;
+    font-size: 1rem;
+    display: column;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.home:hover{
+    background-color: #d2a679;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.register:hover{
+    background-color: #d2a679;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    height: 100vh; /* ทำให้ container เต็มหน้าจอ */
+    padding: 20px; /* ป้องกันข้อความติดขอบจอ */
+}
+
+.header1,.header2,.header3 {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    font-weight: bold; /* ทำให้ข้อความหนา */
+    font-size: 35px; /* ขนาดตัวอักษร */
+    color: #fff;/* สีของข้อความ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
+    margin: 2px 0;  /* ลดช่องว่างด้านล่าง */
+    padding: 0; /* ลด padding ออก */
+    line-height: 1.2;
+}
+
+.form-input {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    font-weight: bold; /* ทำให้ข้อความหนา */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    color: #fff;/* สีของข้อความ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
+    
+}
+
+
+.container1{
+    max-width:1300px;
+    margin:0 auto;
+    padding-top: 30px;
+}
+
+.owlitem1{
+    border:1px solid #eee;
+    padding:20px;
+    margin: 10px;
+    border-radius:10px;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/r1.jpg");
+    background-size: cover;
+    display: flex;
+    overflow-x: auto;
+    gap: 100px; /* ปรับระยะห่างระหว่างรูป */
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.owlitem2{
+    border:1px solid #eee;
+    padding:20px;
+    margin: 10px;
+    border-radius:10px;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/r6.jpg");
+    background-size: cover;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    
+
+}
+
+.owlitem3{
+    border:1px solid #eee;
+    padding:20px;
+    margin: 10px; 
+    border-radius:10px;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/r3.jpg");
+    background-size: cover;
+    display: flex;
+    overflow-x: auto;
+    gap: 100px; /* ปรับระยะห่างระหว่างรูป */
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.owlitem4{
+    border:1px solid #eee;
+    padding:20px;
+    margin: 10px;
+    border-radius:10px;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/r5.jpg");
+    background-size: cover;
+    display: flex;
+    overflow-x: auto;
+    gap: 100px; /* ปรับระยะห่างระหว่างรูป */
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.owlitem5{
+    border:1px solid #eee;
+    padding:20px;
+    margin: 10px;
+    border-radius:10px;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/r2.jpg");
+    background-size: cover;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px; /* ปรับระยะห่างระหว่างรูป */
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.owlitem6{
+    border:1px solid #eee;
+    padding:20px;
+    margin: 10px; 
+    border-radius:10px;
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/r4.jpg");
+    background-size: cover;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px; /* ปรับระยะห่างระหว่างรูป */
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.start{
+    font-family: 'Kanit', sans-serif;
+    background-color:rgb(255, 255, 255,0.8);
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px; /* ขนาดตัวอักษร */ 
+    font-weight: bold; /* ทำให้ข้อความหนา */
+}
+
+.start:hover{
+    background-color:rgb(123, 231, 113,0.7);
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* ขนาดตัวอักษร */
+    transform: scale(1.1);
+    font-weight: bold; /* ทำให้ข้อความหนา */
+}
+
+@media screen and (max-width: 900px) {
+
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .owlitem1, .owlitem2, .owlitem3, .owlitem4, .owlitem5, .owlitem6 {
+        width: 200px;
+        height: 180px;
+    }
+
+    .header1, .header2, .header3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .owlitem1, .owlitem2, .owlitem3, .owlitem4, .owlitem5, .owlitem6 {
+        width: 150px;
+        height: 120px;
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    .menu{
+        display:flex !important;
+        
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-con{
+        flex-direction: column;
+        align-items: flex-start; /* จัดแนวให้ชิดซ้าย */
+        height: auto; /* ปรับความสูงให้เหมาะสม */
+        padding: 0px 20px; /* เพิ่ม padding ด้านบนและล่าง */ 
+    }
+
+    .navbar{
+        padding: 0 20px; /* เพิ่ม padding ซ้ายและขวา */
+        font-size: 1rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
+    }
+
+    .menu{
+        display:none;
+        flex-direction: column; /* เปลี่ยนแนวการจัดเรียงเป็นแนวตั้ง */
+        margin-top: -10px; /* เพิ่มระยะห่างด้านบน */
+        padding: 0; /* ลบ padding ออก */
+    }
+
+    li{
+        margin-left: 0; /* ลบ margin ซ้ายออก */
+        padding: 10px ; /* เพิ่ม padding ด้านบนและล่าง */
+    }
+
+
+}
+
+/* Hamburger Icon Styling */
+.hamburger-icon {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  
+@media only screen and (min-width: 764px) {
+      display: none;
+    }
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }

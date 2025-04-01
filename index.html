@@ -8,51 +8,76 @@
      <!-- ส่วนนี้คือ CSS -->
      <!-- ใช้สำหรับแต่ง (id class) -->
      <link rel="stylesheet" href="index.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
      
      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
 
-     <script>
-          AOS.init();
-        </script>
+     <nav>
+          <div class="nav_container">
+               <div class="nav-con">
+                    <div class="navbar">
+                         <h1 class="logo"> <i class="fa-solid fa-carrot"></i>Restaurant</h1>
+                    </div>
+
+                    <div class="hamburger-icon" id="hamIcon" onclick="toggleHamburgerIcon(this)">
+                         <div class="bar1"></div>
+                         <div class="bar2"></div>
+                         <div class="bar3"></div>
+                     </div>
+
+                    <ul class="menu" id="myMenu">
+                         <li class="home"><a href="home.html">HOME</a></li>
+                         <li class="register"><a href="index.html">REGISTER</a></li>
+                    </ul>
+               </div>
+          </div>
+     </nav>
 
      <!-- form -->
-     <div class="container" data-aos="fade-up">
-          <div class="header">
-               Booking Restaurant
-          </div>
+     <div class="container" data-aos="fade-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000">
+          <h1 class="header">
+               Booking Restaurant<i class="fa-solid fa-utensils"></i>
+          </h1>
 
-          <div class="flex form-input">
+          <div class="form-input">
                <div class="header-from">ชื่อ</div>
-               <input class="form" name="firstname" type="text">
+               <input class="form" name="firstname" type="text" placeholder="firstname">
           </div>
 
-          <div class="flex form-input">
+          <div class="form-input">
                <div class="header-from">นามสกุล</div>
-               <input class="form" name="lastname" type="text"> 
+               <input class="form" name="lastname" type="text" placeholder="lastname"> 
           </div>
 
-          <div class="flex form-input">
+          <div class="form-input">
                <div class="header-from">จำนวนคน</div>
-               <input class="form" name="person" type="number" min="0" max="20">
+               <input class="form" name="person" type="number" min="1" max="20" placeholder="person">
           </div>
 
-          <div class="flex gender form-input">
+          <div class="form-input">
                <div class="header-from">วันเเละเวลาที่จอง</div>
                <div class="flex">
-                    <input class="form" name="date_time" type="datetime-local">
+                    <input class="form" name="date_time" type="datetime-local" placeholder="date_time">
+          </div>
           </div>
 
           <div class="form-input">
                ช่องทางการติดต่อ
                <div name="tel">
-                    <input class="form" name="tel" type="text"> 
+                    <input class="form" name="tel" type="text" placeholder="Contact"> 
                </div>
           </div>
           <div class="form-input">
                สิ่งที่ต้องการเพิ่มเติม
-               <textarea name="description"></textarea>
+               <textarea name="description" placeholder="Requirements"></textarea>
           </div>
           <div id="message" class="message"></div>
           <div class="center">
@@ -66,6 +91,5 @@
      <script>
        AOS.init();
      </script>
-
 </body>
 </html>

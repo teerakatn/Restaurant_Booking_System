@@ -28,10 +28,10 @@ const initMySQL = async () => {
 const validateData = (userData) => {
   let errors = []
   if (!userData.firstname) {
-    errors.push ('Firstname')
+    errors.push ('ชื่อผู้จอง')
   }
   if (!userData.lastname) {
-    errors.push ('Lastname')
+    errors.push ('นามสกุล')
   }
   if (!userData.person) {
     errors.push ('จำนวนคน')
@@ -144,8 +144,6 @@ app.delete('/users/:id',async (req, res) => {
 
 //เช็กว่า conn ถูกสร้างหรือยัง
   app.listen(port,async (req,res) => {
-    if (!conn) {
       await initMySQL();
-    }
     console.log('http server is running on port'+port)
   })

@@ -1,0 +1,167 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background: url("picture/res1.webp");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+}
+
+nav{
+    position: fixed; /* ทำให้ navbar คงที่เมื่อเลื่อนหน้าเว็บ */
+    top: 0;
+    left: 0;
+    width: 100%; /* ให้ navbar กว้างเต็มจอ */
+    background-color:rgba(221, 149, 133, 0.82);
+    box-sizeding: border-box; /* ทำให้ padding ไม่ทำให้ขนาดของ navbar เปลี่ยน */
+    padding: 10px 0;
+}
+
+.nav_container{
+    max-width: 1140px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.nav-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:60px;
+}
+
+.navbar{
+    padding: 0 20px;
+    font-size: 1rem;
+    display: column;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.home:hover{
+    background-color: #d2a679;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.register:hover{
+    background-color: #d2a679;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-input {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.container1{
+    max-width:768px;
+    margin:0 auto;
+}
+
+.owlitem1{
+    border:1px solid #eee;
+    padding:5rem;
+    margin:0.5rem ;
+    border-radius:10px
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/food1.jpg");
+    background-size: cover;
+    display: flex;
+
+}
+
+.owlitem2{
+    border:1px solid #eee;
+    padding:5rem;
+    margin:0.5rem ;
+    border-radius:10px
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/food2.jpg");
+    background-size: cover;
+    display: flex;
+
+}
+
+.owlitem3{
+    border:1px solid #eee;
+    padding:5rem;
+    margin:0.5rem ;
+    border-radius:10px
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/food3.jpg");
+    background-size: cover;
+    display: flex;
+
+}
+
+.owlitem4{
+    border:1px solid #eee;
+    padding:5rem;
+    margin:0.5rem ;
+    border-radius:10px
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/food4.jpg");
+    background-size: cover;
+    display: flex;
+
+}
+
+.owlitem5{
+    border:1px solid #eee;
+    padding:5rem;
+    margin:0.5rem ;
+    border-radius:10px
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/food5.jpg");
+    background-size: cover;
+    display: flex;
+
+}
+
+.owlitem6{
+    border:1px solid #eee;
+    padding:5rem;
+    margin:0.5rem ;
+    border-radius:10px
+    box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    background: url("picture/food6.jpg");
+    background-size: cover;
+    display: flex;
+}
