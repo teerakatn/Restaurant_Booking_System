@@ -129,18 +129,23 @@ const loadData = async () => {
     userDOM.innerHTML = htmlData;
 
   //3. สร้าง event สำหรับลบ user
-  const deletDOMs = document.getElementsByClassName('delete')
-  for (let i = 0; i < deletDOMs.length; i++) {
-    deletDOMs[i].addEventListener('click', async (event) => {
-      const id = event.target.dataset.id
-      try {
-        await axios.delete(`${BASE_URL}/users/${id}`)
-        loadData()//เรียกใช้ฟังก์ชั่นตัวเองเพื่อโหลดข้อมูลใหม่
-      } catch (error) {
-        console.log('error', error)
+  document.querySelectorAll('.delete').forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const id = event.target.closest(".delete").dataset.id;
+      if (!id) {
+        console.error("ID not found!");
+        return;
       }
-    })
-  }
+        try {
+          await axios.delete(`${BASE_URL}/users/${id}`);
+          console.log(`Deleted user with ID: ${id}`);
+          loadData(); // โหลดข้อมูลใหม่หลังจากลบ
+        } catch (error) {
+          console.error("Error deleting user:", error);
+        }
+      
+    });
+  });
   /*4. สร้าง event สำหรับการค้นหา*/
   const filterDOM = document.getElementById('search');
   filterDOM.addEventListener('keyup', (event) => {
