@@ -1,7 +1,10 @@
 body {
     font-family: 'Kanit', sans-serif;
-    background: url("picture/res1.webp");
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) ,url("picture/res1.webp");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -216,7 +219,7 @@ a{
     object-fit: cover;
 }
 
-.start{
+.start{/* ปุ่มเริ่มต้น */
     font-family: 'Kanit', sans-serif;
     background-color:rgb(255, 255, 255,0.8);
     border-radius: 10px;

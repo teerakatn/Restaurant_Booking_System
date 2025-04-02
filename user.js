@@ -38,6 +38,33 @@ const formatDateTime = (utcDateString) => {
     });
 };
 
+/*ฟังชั่นอัปเดตสถานะ */
+const updateStatus = async (id, status) => {
+  try {
+      console.log(`🔄 Updating ID: ${id}, Status: ${status}`);
+
+      if (!id || !status) {
+          console.error("⛔ ID or Status is missing!");
+          return;
+      }
+
+      await axios.put(`${BASE_URL}/users/${id}`, { status: status });
+
+      const statusCell = document.getElementById(`status-${id}`);
+      if (statusCell) {
+          statusCell.textContent = status;
+          statusCell.classList.remove("status-approved", "status-pending");
+          if (status === "success") {
+              statusCell.classList.add("status-approved");
+          }
+      } else {
+          console.warn(`Element status-${id} not found`);
+      }
+  } catch (error) {
+      console.error('Error update status', error);
+  }
+};
+
 const loadData = async () => {
   console.log('user page loaded')
   //1. load user ทั้งหมด จาก api ที่เตรียมไว้
@@ -60,8 +87,8 @@ const loadData = async () => {
               <th>date_time</th>
               <th>tel</th>
               <th>Status</th>
-              <th>Action</th>
               <th>Description</th>
+              <th>Action</th>
               <th>Booking</th>
           </tr>
       </thead>
@@ -114,7 +141,7 @@ const loadData = async () => {
       }
     })
   }
-  
+  /*4. สร้าง event สำหรับการค้นหา*/
   const filterDOM = document.getElementById('search');
   filterDOM.addEventListener('keyup', (event) => {
     const filterValue = event.target.value.toLowerCase();
@@ -134,40 +161,23 @@ const loadData = async () => {
       row.style.display = rowContainsFilterValue ? '' : 'none';
     });
   });
+ /*5. สร้าง event สำหรับการจัดเรียงข้อมูล*/
+  document.addEventListener('click', async (event) => {
+    if (event.target.closest('.approve')) {
+        event.preventDefault();
+        const button = event.target.closest('.approve');
+        const id = button.dataset.id;
+        const status = button.dataset.status;
+        console.log(`Approve Clicked: ID=${id}, Status=${status}`);
 
-  const approveDOMs = document.getElementsByClassName('approve');
-  for(let i = 0; i < approveDOMs.length; i++) {
-      approveDOMs[i].addEventListener('click', async (event) => {
-          const id = event.target.dataset.id;
-          const status = event.target.dataset.status;
-          await updateStatus(id, status);
-      });
-  }
-
-  const updateStatus = async (id, status) => {
-    try {
-        await axios.put(`${BASE_URL}/users/${id}`, { status: status });
-
-        // อัปเดตข้อความของสถานะ
-        const statusCell = document.getElementById(`status-${id}`);
-        statusCell.textContent = status;
-
-        // ลบ class เดิมก่อน
-        statusCell.classList.remove("status-approved", "status-pending");
-
-        // เพิ่ม class ใหม่ตามค่า status
-        if (statusCell) {
-          statusCell.textContent = status;
-          statusCell.classList.remove("status-approved", "status-pending");
-          if (status === "success") {
-              statusCell.classList.add("status-approved");
-          }
-      } else {
-          console.warn(`Element status-${id} not found`);
-      }
-    } catch (error) {
-        console.error('Error updating status', error);
+        if (id && status) {
+            await updateStatus(id, status);
+            window.location.href = "booking.html"; // ไปยัง booking.html หลังอัปเดต
+        } else {
+            console.error("ID or Status not found!");
+        }
     }
-};
+});
+  
 }
  

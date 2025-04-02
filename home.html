@@ -19,7 +19,9 @@
 </head>
 <body>
 
-  <nav>
+  <nav data-aos="fade-down"
+  data-aos-easing="ease-out-cubic"
+  data-aos-duration="1000">
     <div class="nav_container">
          <div class="nav-con">
               <div class="navbar">
@@ -40,7 +42,7 @@
     </div>
 </nav>
 
-    <div class="container" data-aos="fade-down"
+    <div class="container" data-aos="fade-up"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="1000">
           <h1 class="header1">
@@ -82,11 +84,15 @@
     <script src="OwlCarousel2/Owl/dist/owl.carousel.min.js"></script>
 
     <script>
-        $(document).ready(function(){
-        $(".owl-carousel").owlCarousel();
-        });
-    </script>
-
+      $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+      margin: 10,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      });
+   });
+  </script>
     <script src="home.js"></script> 
 
 </body>

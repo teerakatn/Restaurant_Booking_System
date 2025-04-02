@@ -17,6 +17,7 @@ hamIcon.addEventListener("click", function() {
   }
 });
 
+/*ฟังก์ชันสำหรับโหลดข้อมูลจาก API*/
 window.onload = async() => {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');   
@@ -36,6 +37,7 @@ window.onload = async() => {
     date_timeDOM.value = formattedDateTime;
   }
 
+/*โหมดเเก้ไขชื่อผู้ใช้*/
   if(id){
     mode='EDIT'
     selectedId=id
@@ -74,6 +76,7 @@ window.onload = async() => {
   }
 }
 
+/*ฟังก์ชันสำหรับโหลดข้อมูลจาก API ใช้เพื่อเช็คว่ามีข้อมูลซ้ำหรือไม่*/
 const checkDuplicate = async (userData) => {
   try {
     const response = await axios.get(`${BASE_URL}/users`);
@@ -120,7 +123,7 @@ const submitData = async () => {
       return;
     }
 
-
+  /*โหมด Edit เเก้ไขหน้าregisterหรือindex*/
    let message = 'การจองสำเร็จ'
     if(mode=='CREATE'){
       const response = await axios.post(`${BASE_URL}/users`, userData)
@@ -141,7 +144,7 @@ const submitData = async () => {
     console.log('error message', error.message);
     console.log('error', error.errors);
 
-    // ดึง Element ของข้อความแจ้งเตือน
+    /*ข้อความเเจ้งเตือนเวลากรอกข้อมูลไม่ครบหรือผิดพลาด*/
     let messageDOM = document.getElementById('message');
     
     if (error.response) {
